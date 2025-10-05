@@ -35,7 +35,9 @@
           <p>The teachers and students are deeply grateful for his unwavering presence and generosity.</p>
         </div>
         <div class="about-image">
-          <img src="images/mario 1.jpg" alt="Father Mario with students">
+          <a href="images/mario 1.jpg" class="lightbox">
+            <img src="images/mario 1.jpg" alt="Father Mario with students">
+          </a>
         </div>
       </div>
     </div>
@@ -96,11 +98,6 @@
           <img src="images/mario 3.jpg" alt="Community event">
         </a>
       </div>
-      <!-- Lightbox Modal -->
-      <div id="lightbox-modal" class="lightbox-modal">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" src="" alt="">
-      </div>
     </div>
   </section>
 
@@ -120,6 +117,12 @@
       <p>“Faith, Wisdom, and Compassion in Action”</p>
     </div>
   </footer>
+
+  <!-- Move the modal here, outside all containers/sections -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" src="" alt="">
+  </div>
 
   <script src="js/script.js"></script>
 </body>
