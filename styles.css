@@ -11,8 +11,8 @@ body {
   background-color: #fdf9f5;
 }
 h1, h2, h3 {
-  font-weight: 700;
   color: #14213d; /* dark navy */
+  font-weight: 700;
 }
 .container {
   width: 90%;
@@ -54,19 +54,9 @@ li {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(44, 94, 26, 0.55); /* dark green overlay for readability */
+  background: rgba(20, 33, 61, 0.55); /* dark navy overlay for readability */
   z-index: 1;
 }
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
-}
-.hero p {
-  font-size: 1.4rem;
-  max-width: 800px;
-  margin: 0 auto 30px;
-}
-
 .hero .container {
   position: relative;
   z-index: 2;
@@ -75,15 +65,16 @@ li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 30px;
 }
 
 /* Profile Circle - Desktop */
 .profile-circle {
   position: absolute;
-  top: 18px;
-  left: 18px;
-  width: 200px;      /* enlarged to 200px */
-  height: 200px;     /* enlarged to 200px */
+  top: 24px;
+  left: 24px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid #fff;
@@ -95,18 +86,11 @@ li {
   justify-content: center;
 }
 
-.profile-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 /* Profile Circle - Tablet */
 @media (max-width: 900px) {
   .profile-circle {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     top: 12px;
     left: 12px;
   }
@@ -115,13 +99,24 @@ li {
 /* Profile Circle - Mobile */
 @media (max-width: 600px) {
   .profile-circle {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     top: 8px;
     left: 8px;
     border-width: 1px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.10);
   }
+  .hero .container {
+    padding-top: 60px; /* ensures header text is pushed down below the icon */
+  }
+}
+
+/* Make sure the profile image fits the circle */
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* About */
@@ -182,15 +177,35 @@ li {
   justify-content: center;
 }
 .gallery a {
-  flex: 1 1 220px;
-  max-width: 220px;
+  flex: 1 1 180px;
+  max-width: 180px;
 }
 .gallery img {
   width: 100%;
-  height: 160px;
+  height: 120px;
   object-fit: cover;
   border-radius: 8px;
   display: block;
+}
+
+/* Mobile: Stack images and make them uniform */
+@media (max-width: 600px) {
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery a {
+    max-width: 95vw;
+    width: 95vw;
+  }
+  .gallery img {
+    width: 100%;
+    height: 100px;
+    max-width: 95vw;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
 }
 
 /* Lightbox Modal Styles - improved for mobile */
@@ -273,10 +288,16 @@ li {
     align-items: center;
   }
   .gallery a {
-    max-width: 100%;
+    max-width: 95vw;
+    width: 95vw;
   }
   .gallery img {
-    height: 180px;
+    width: 100%;
+    height: 100px;
+    max-width: 95vw;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
   }
   .lightbox-content {
     max-width: 98vw;
